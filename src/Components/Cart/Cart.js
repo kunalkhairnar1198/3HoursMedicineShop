@@ -1,6 +1,7 @@
-import React, { Fragment, useContext } from 'react'
+import React, {  useContext } from 'react'
 import CartContext from '../Store/CartContext'
 import Modal from '../Ui/Modal'
+import classes from './Cart.module.css'
 
 const Cart = (props) => {
 
@@ -23,21 +24,27 @@ const Cart = (props) => {
   return (
     <Modal onClose={props.onCloseHandler}>
           <span>
-              <h4>Cart Added Items</h4>
+              <h4>ADDED Medicines</h4>
           </span>
-      <ul>
-          {cartCtx.medicinesCart.map((med)=>
-                <li key={med.id}>
-                   <span>Name:{med.name}</span>
-                    <span>Price:{med.price}</span>
-                    <span> x {med.quantity}</span>
-                    <button onClick={AddItemToCartHandler.bind(null, med)}>+</button>
-                    <button onClick={RemoveItemToCartHandler.bind(null, med)}>-</button>
-                </li>
-          )}
-      </ul>
-            <h3>TotalAmount:{TotalAmount}</h3>
-     <div>
+        <ul className={classes.list}>
+            {cartCtx.medicinesCart.map((med)=>
+                  <li className={classes['list-item']} key={med.id}>
+                    <h2>{med.name}</h2>
+                      <span className={classes.price}>{med.price}</span>
+                      <span className={classes.quantity}> x {med.quantity}</span>
+                    <div className={classes.actbtn}>
+                      <button onClick={AddItemToCartHandler.bind(null, med)}>+</button>
+                      <button onClick={RemoveItemToCartHandler.bind(null, med)}>-</button>
+                    </div>
+                  </li>
+            )}
+        </ul>
+
+            <div className={classes.total}>
+              <span>TotalAmount</span>
+              <span> Rs.{TotalAmount}</span>
+            </div>
+     <div className={classes.actions}>
         <button onClick={props.onCloseHandler}>Close</button>
         <button >Order</button>
       </div>

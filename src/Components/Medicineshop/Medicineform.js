@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import CartContext from '../Store/CartContext';
-
+import classes from './Medicineform.module.css'
 const Medicineform = () => {
   const [medicName, setMedicName] = useState('');
   const [description, setDescription] = useState('');
@@ -44,8 +44,8 @@ const Medicineform = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={SubmitHandler}>
+    <Fragment>
+      <form className={classes.container} onSubmit={SubmitHandler}>
         <label>Name</label>
         <input type='text' placeholder='Enter med name' value={medicName} onChange={medNameChangeHandler}/>
         <label>Description</label>
@@ -56,7 +56,7 @@ const Medicineform = () => {
         <input type='number' value={quantity} onChange={quantChangeHandle}/>
         <button>Add Medicine</button>
       </form>
-    </div>
+    </Fragment>
   );
 }
 

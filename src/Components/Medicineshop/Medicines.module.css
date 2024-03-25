@@ -1,0 +1,88 @@
+.medicine {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+    background-color: wheat;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(228, 28, 28, 0.25);
+  }
+  
+  .medicine ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.medicine h1 {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.med{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+.name{
+    font-style:italic;
+    margin-left: 2rem;
+    font-weight: bold;
+    /* opacity: 50%; */
+    color: rgb(90, 79, 79);
+}
+.description{
+    font-style:italic;
+    margin-left: 2rem;
+    font-weight: bold;
+    color: rgb(90, 79, 79);
+}
+
+.price {
+    font-style:italic;
+    margin-left: 2rem;
+    font-weight: bold;
+    color: rgb(90, 79, 79);
+}
+
+.quantity {
+    font-style:italic;
+    margin-left: 2rem;
+    font-weight: bold;
+    color: rgb(90, 79, 79);
+}
+
+.action button {
+    display: flex;
+    height: 2rem;
+    margin-left: 2rem;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-direction: column;
+    border: none;
+    border-radius: 10rem;
+    background-color: brown;
+    padding-left:0 20%;
+    padding: 2 ,50rem;
+}
+
+.action button:hover {
+    background-color: green;
+    color: white;
+}
+  
+  @keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

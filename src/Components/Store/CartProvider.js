@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react'
 import CartContext from './CartContext'
 
@@ -15,7 +13,7 @@ const CartProvider = (props) => {
         },
         {
             id: 2,
-            name: 'Parasetomoal',
+            name: 'dollo',
             description:'Detail of medicine',
             price: '500',
             quantity:20
@@ -24,8 +22,8 @@ const CartProvider = (props) => {
 
 
     const addMedicineItems=(newItem)=>{
+        console.log('WHEN ADD NEW MEDICINE IN DASH')
         setAddMedData([...addMedData, newItem])
-        // setMedicineCart(newItem)
     }
 
     const addItemsToCart =(newItem)=>{
@@ -34,12 +32,12 @@ const CartProvider = (props) => {
         console.log('======',medicineItem)
 
         if(medicineItem.quantity === 0){
-            // console.log('empty cart is not found')
+            console.log('empty cart is not found')
             return
         }else{
             const updatedMedicine = {...medicineItem, quantity:medicineItem.quantity - 1}
             const updatedMedItems =[...addMedData]
-            // console.log(updatedMedItems)
+            console.log('updatedMedItems -1 decrease TO DASH when add to cart')
             updatedMedItems[medicineItemIndex] = updatedMedicine;
             setAddMedData(updatedMedItems)
         }
@@ -54,7 +52,7 @@ const CartProvider = (props) => {
                 ...existingItem,
                 quantity:existingItem.quantity + 1
             }
-
+            console.log('EXISTING DATA UPDATE')
             const updatedCart = [...medicinesCart]
             updatedCart[existingItemIndex]=updatedItem
             setMedicineCart(updatedCart)
@@ -63,6 +61,7 @@ const CartProvider = (props) => {
                 ...newItem,
                 quantity:1
             }
+            console.log('EXISTING ELSE CONDITION')
             const updatedCart =[...medicinesCart, updatedItem]
             setMedicineCart(updatedCart)
         }
